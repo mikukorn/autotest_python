@@ -3,7 +3,7 @@
 
 
 Какие проверки были реализованы: 
-1.  Проверка на корректное отображение страницы и элементов.
+1.  Проверка на корректное отображение главной страницы и элементов.
 1.2 Проверка на корректный переход по ссылке Ruby
 2.  Проверка блока menu
 2.2 Проверка перехода по ссылкам в разделе меню
@@ -22,3 +22,11 @@
 4) Время на выполнение неделя.
 5) Плюсом будет написание docker-compose для локального запуска тестов.
 
+
+### Памятка по запуску и работе с проектом 
+"pip freeze" - зафикисровать requirements.txt
+"python -m pytest -s --alluredir=allure_test_results/" запустить тесты с отчетом allure 
+"allure serve C:\Users\{user}\PycharmProjects\autotest_python\allure_test_results"
+"docker build -t pytest_runner ." -контейнер docker
+"docker run --rm --mount type=bind,src=C:\Users\mikuk\PycharmProjects\autotest_python,target=/test_project/ pytest_runner"
+"docker-compose up --build" -запустить тесты в докере
