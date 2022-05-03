@@ -63,3 +63,17 @@ def test_go_to_readme_link(browser):
     page = MainPage(browser, main_page_link)
     page.open()
     page.go_to_readme_link()
+
+@allure.story("Проверка наличия блока команды для установки")
+@allure.severity(allure.severity_level.NORMAL)
+def test_display_command_install(browser):
+    page = MainPage(browser, main_page_link)
+    page.open()
+    page.check_code_object_command_install()
+
+@allure.story("Проверка футера главной страницы")
+@allure.severity(allure.severity_level.TRIVIAL)
+def test_display_footer(browser):
+    page = MainPage(browser, main_page_link)
+    page.open()
+    page.click_elabs_icon()

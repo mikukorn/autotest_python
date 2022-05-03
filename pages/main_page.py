@@ -2,6 +2,7 @@ import allure
 from allure_commons.types import AttachmentType
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from nose.tools import assert_equal, assert_true
 
 from .base_page import BasePage
 from .locators import MainPageLocators, RubyPageLocators
@@ -68,4 +69,11 @@ class MainPage(BasePage):
         window_after = self.browser.window_handles[1]
         self.browser.switch_to.window(window_after)
         wait.until(EC.url_to_be(menu_source_code_link))
+
+    def check_code_object_command_install(self):
+        self.browser.find_element(*MainPageLocators.CODE_OBJECT)
+        self.browser.find_element(*MainPageLocators.INSTALL_COMMAND_TEXT)
+
+    def click_elabs_icon(self):
+        self.browser.find_element(*MainPageLocators.ELABS_BUTTON).click()
 
